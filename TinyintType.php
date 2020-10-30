@@ -5,8 +5,9 @@ namespace Devnix\Doctrine\DBAL\Types;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 
-class TinyintType extends Type {
-    const TINYINT = 'tinyint';
+class TinyintType extends Type 
+{
+    const TINYINT = 'mysql_tinyint';
 
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
     {
@@ -28,7 +29,7 @@ class TinyintType extends Type {
 
     public function requiresSQLCommentHint(AbstractPlatform $platform)
     {
-        return false;
+        return true;
     }
 
     public function convertToPHPValue($value, AbstractPlatform $platform)
