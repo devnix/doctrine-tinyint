@@ -12,14 +12,12 @@ An tinyint type for Doctrine MYSQL
 doctrine:
     dbal:
         types:
-            tinyint:  Devnix\Doctrine\DBAL\Types\TinyintType
-        mapping_types: # Seems to be necessary if you want migrations to work properly
-            tinyint: tinyint
+            mysql_tinyint:  Devnix\Doctrine\DBAL\Types\TinyintType
 ```
 
 ## Usage:
 
-This fork of [GollumSF/doctrine-tinyint](https://github.com/GollumSF/doctrine-tinyint) adds support for custom length
+This fork of [GollumSF/doctrine-tinyint](https://github.com/GollumSF/doctrine-tinyint) adds support for custom length, and doesn't conflict with Doctrine's boolean implementation, which is `tinyint` for MySQL. So we have to use a different type name, in this case `mysql_tinyint`.
 
 ```php
 namespace App\Entity;
@@ -32,19 +30,19 @@ use Doctrine\ORM\Mapping as ORM;
 class Entity 
 {	
     /**
-     * @ORM\Column(type="tinyint")
+     * @ORM\Column(type="mysql_tinyint")
      * @var int
      */
     private $tinyint;
 
     /**
-     * @ORM\Column(type="tinyint", length=3)
+     * @ORM\Column(type="mysql_tinyint", length=3)
      * @var int
      */
     private $tinyintWithCustomLength;
 
     /**
-     * @ORM\Column(type="tinyint", options={"unsigned": true})
+     * @ORM\Column(type="mysql_tinyint", options={"unsigned": true})
      * @var int
      */
     private $tinyintUnsigned;
