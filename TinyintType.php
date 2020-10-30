@@ -5,7 +5,7 @@ namespace Devnix\Doctrine\DBAL\Types;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 
-class TinyInt extends Type {
+class TinyintType extends Type {
     const TINYINT = 'tinyint';
 
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
