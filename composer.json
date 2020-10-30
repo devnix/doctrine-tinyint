@@ -1,5 +1,5 @@
 {
-	"name" : "gollumsf/doctrine-tinyint",
+	"name" : "devnix/doctrine-tinyint",
 	"type" : "library",
 	"description" : "An tinyint type for Doctrine MYSQL",
 	"keywords" : [
@@ -9,14 +9,20 @@
 	],
 	"homepage" : "https://github.com/GollumSF/doctrine-tinyint",
 	"license" : "GPL-3.0-or-later",
-	"authors" : [{
+	"authors" : [
+		{
+			"name" : "Pablo Largo",
+			"email" : "devnix.code@gmail.com"
+		},
+		{
 			"name" : "Damien Duboeuf",
 			"email" : "smeagolworms4@gmail.com"
 		}
 	],
 	"support" : {
-		"email" : "smeagolworms4@gmail.com",
-		"wiki" : "https://github.com/GollumSF/doctrine-tinyint/blob/master/README.md"
+		"email" : "devnix.code@gmail.com",
+		"issues": "https://github.com/devnix/doctrine-tinyint/issues",
+		"wiki" : "https://github.com/devnix/doctrine-tinyint/blob/master/README.md"
 	},
 	"minimum-stability": "dev",
 	"require" : {
@@ -24,9 +30,8 @@
 		"doctrine/dbal": "2.*"
 	},
 	"autoload" : {
-		"psr-0" : {
-			"GollumSF\\Doctrine" : ""
+		"psr-4" : {
+			"Devnix\\Doctrine\\DBAL\\Types\\" : ""
 		}
-	},
-	"target-dir" : "GollumSF/Doctrine"
+	}
 }
